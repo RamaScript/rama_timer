@@ -67,8 +67,9 @@ def update_timer():
     gross_remaining = target_time - now
     net_remaining = calculate_net_remaining_time(now, target_time)
 
-    countdown_gross_label.config(text="Gross: " + format_time(gross_remaining))
-    countdown_net_label.config(text="   Net: " + format_time(net_remaining) + " (Excludes job time)")
+    # countdown_gross_label.config(text="Gross: " + format_time(gross_remaining))
+    countdown_gross_label.config(text=format_time(gross_remaining))
+    # countdown_net_label.config(text="   Net: " + format_time(net_remaining) + " (Excludes job time)")
 
     root.after(1000, update_timer)
 
@@ -93,10 +94,10 @@ countdown_gross_label = tk.Label(
 )
 countdown_gross_label.pack(side="left")
 
-countdown_net_label = tk.Label(
-    label_frame, font=(FONT_FAMILY, FONT_SIZE), fg=COLOR_TEXT_HIGHLIGHT, bg=COLOR_BACKGROUND
-)
-countdown_net_label.pack(side="left")
+# countdown_net_label = tk.Label(
+#     label_frame, font=(FONT_FAMILY, FONT_SIZE), fg=COLOR_TEXT_HIGHLIGHT, bg=COLOR_BACKGROUND
+# )
+# countdown_net_label.pack(side="left")
 
 # 🔁 Start timer
 update_timer()
